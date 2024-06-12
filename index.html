@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текстовые Блоки</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            padding-top: 20px;
+        }
+
+        .text-area-block {
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease both;
+        }
+
+        .textarea {
+            resize: none;
+        }
+
+        .copy-btn {
+            margin-top: 10px;
+        }
+
+        .category-header {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        @keyframes fireworks {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
+
+        .firework {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: fireworks 0.5s forwards;
+        }
+
+        .firework:nth-child(1) {
+            background-color: red;
+            animation-delay: 0s;
+        }
+
+        .firework:nth-child(2) {
+            background-color: blue;
+            animation-delay: .1s;
+        }
+
+        .firework:nth-child(3) {
+            background-color: green;
+            animation-delay: .2s;
+        }
+
+        .firework:nth-child(4) {
+            background-color: yellow;
+            animation-delay: .3s;
+        }
+
+        .firework:nth-child(5) {
+            background-color: orange;
+            animation-delay: .4s;
+        }
+
+        .copied {
+            content: 'Скопировано!';
+            display: inline-block;
+            background-color: #48c774;
+            color: white;
+            padding: 0.5em;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Используем CSS для отображения состояния "Скопировано" */
+        .textarea:focus + .copy-btn::after {
+            content: 'Скопировано!';
+            display: block;
+            background-color: #48c774;
+            color: white;
+            padding: 0.5em;
+            border-radius: 4px;
+            margin-top: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title has-text-centered">Текстовые Блоки</h2>
+
+        <div class="category-header">Приветствие</div>
+        <div class="columns is-centered">
+            <div class="column is-one-third text-area-block">
+                <textarea class="textarea" onfocus="this.select()">Приветствую! Меня зовут Никита, я специалист компании ПризываНет. Вам актуальна помощь в освобождении от службы в армии?</textarea>
+                <button class="button is-primary copy-btn">Копировать</button>
+            </div>
+        </div>
+
+        <div class="category-header">Консультация</div>
+        <div class="columns is-centered">
+            <div class="column is-one-third text-area-block">
+                <textarea class="textarea" onfocus="this.select()">У нас сейчас доступна возможность проведения бесплатной консультации в офисе. На ней опытный специалист по медицинской и юридической части индивидуально разберет Вашу ситуацию, ответит на все интересующие вопросы, даст рекомендации, и составит план действий для освобождения от службы. Консультация бесплатная. Скажите, было бы интересно?</textarea>
+                <button class="button is-primary copy-btn">Копировать</button>
+            </div>
+            <div class="column is-one-third text-area-block">
+                <textarea class="textarea" onfocus="this.select()">В таком случае приглашаю Вас на чашечку кофе или чая к нам в офис, радушно побеседуем. У нас сейчас работает формат бесплатных консультаций у нас в офисе. Опытный специалист разбирает Вашу ситуацию, рассматривает мед.доки, если имеются на руках, подсказывает как двигаться и что можно сделать для освобождения. Консультация бесплатная. Было бы интересно?</textarea>
+                <button class="button is-primary copy-btn">Копировать</button>
+            </div>
+        </div>
+
+        <div class="category-header">Рассрочка</div>
+        <div class="columns is-centered">
+            <div class="column is-one-third text-area-block">
+                <textarea class="textarea" onfocus="this.select()">Также действует на него сейчас беспроцентная рассрочка, первый платеж через месяц и ежемесячный 4500руб</textarea>
+                <button class="button is-primary copy-btn">Копировать</button>
+            </div>
+        </div>
+
+        <div class="category-header">Заключение</div>
+        <div class="columns is-centered">
+            <div class="column is-one-third text-area-block">
+                <textarea class="textarea" onfocus="this.select()">Отлично! Смотрите, могу предложить сразу поступить продуктивнее</textarea>
+                <button class="button is-primary copy-btn">Копировать</button>
+            </div>
+            <div class="column is-one-third text-area-block">
+                <textarea class="textarea" onfocus="this.select()">А если была бы таблетка, как в "Матрице", которая помогает освободиться от армии - выпили бы?</textarea>
+                <button class="button is-primary copy-btn">Копировать</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
