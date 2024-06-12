@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Текстовые Блоки</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"> <!-- Добавлено -->
     <style>
         body {
             background-color: #f8f9fa;
@@ -92,7 +93,6 @@
             display: none;
         }
 
-        /* Используем CSS для отображения состояния "Скопировано" */
         .textarea:focus + .copy-btn::after {
             content: 'Скопировано!';
             display: block;
@@ -149,5 +149,16 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script> <!-- Добавлено -->
+    <script src="https://unpkg.com/tippy.js@6"></script> <!-- Добавлено -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tippy('.copy-btn', {
+                content: 'нажми для копирования',
+                placement: 'top',
+                theme: 'light',
+            });
+        });
+    </script>
 </body>
 </html>
